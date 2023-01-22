@@ -1,0 +1,21 @@
+body {
+    background-color: lavender;
+    font-family: monospace;
+}
+
+header {
+    background-color: skyblue;
+}
+
+ section #reviews {
+    display: none;
+}
+
+
+@media screen and (max-width: 400px) {
+#reviews {
+display: none;
+    }
+}
+        
+
