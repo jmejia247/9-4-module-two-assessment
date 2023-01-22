@@ -1,0 +1,11 @@
+body {
+    background-color: lavender;
+}
+.header {
+    background-color: skyblue;
+    width: 75%;
+    text-align: center;
+}
+.dropdown {
+    width: 50%;
+}
