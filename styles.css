@@ -25,11 +25,11 @@ h1 {
     padding: 0;
 }
 
-#fixed-header {
+/* #fixed-header {
 
-}
+} */
 
-#logo img {
+#logo {
     width: 75%;
     background-color: skyblue;
 }
