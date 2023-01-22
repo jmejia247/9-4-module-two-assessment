@@ -1,0 +1,21 @@
+body {
+    background-color: lavender;
+    font-family: monospace;
+}
+
+.header {
+    background-color: skyblue;
+    width: 75%
+}
+
+.img {
+    width: 150px;
+}
+
+h1 {
+    text-align: right;
+}
+
+#reviews{
+    display: none;
+}
