@@ -1,61 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="./style.css" />
-    <script defer src="./main.js" ></script>
+    <script defer src="./main.js"></script>
 </head>
+
 <body>
     <header class="header">
-        <img src="./images/ghibli-logo.png" class ="logo" alt="Ghibli logo" />
+        <img src="./images/ghibli-logo.png" alt="Ghibli logo">
         <h1>Ghibli Review App</h1>
     </header>
-
     <main>
-        
-        <section class="selectMovieDropdown">
-        <h2>Select a movie</h2>
-        <select name="titles" class="dropdown">
-            <option value=""></option>
-        </select>
-        </section>
-
         <section>
-        <h2 class="addReview">Add a review</h2>
-        <form class="addReview">
-            <label for="review">
+            <h2>Select a movie</h2>
+            <select id="title">
+                <option value=""></option>
+            </select>
+        </section>
+        <section>
+            <h2>Add a review</h2>
+            <form action="">
+              <label for="review">
                 Your review
-            </label>
-            <input type="text" id="review"/>
-            <input type="submit" value="Submit"/>
-        </form>
-       </section>
-
-        <section class="movieDetails">
+                <input id="review" type="text" name="review" required />
+                <input type="submit" value="Submit">
+              </label>
+            </form>
+          </section>
+          <section>
+            <h2>Movie details</h2>
             <div id="display-info">
-            <h2>
-                Movie details
-            </h2>
-        </div>
-        </section>
+              <p></p>
+            </div>
+          </section>
+          <section>
+            <h2>People</h2>
+            <ol></ol>
+            <button type="submit" id="show-people">Show People</button>
+          </section>
+          <section id="reviews">
+            <h2>Reviews</h2>
+            <ul></ul>
+            <button type="submit" id="reset-reviews">Reset Reviews</button>
 
-        <section class="people">
-        <h2>People</h2>
-        <ol class="peopleList"></ol>
-        <button class="button" id="show-people">Show People</button>
-        </section>
-
-        <section class="reviewsSection" id="reviews">
-            <h2 class="reviewHeader">Reviews
-            </h2>
-            <ul class="reviewList"></ul>
-            <button class="button" id="reset-reviews">Reset Reviews</button>
-        </section>
-
+          </section>
     </main>
-    
 </body>
+
 </html>

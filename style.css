@@ -20,7 +20,7 @@ body {
 }
 
 #reviews {
-    display: none;
+    display: block;
 }
 
 .header h1 {
@@ -28,17 +28,9 @@ body {
     text-align: right;
 }
 
-@media (max-width: 500px) {
-    .img {
-        display: none;
-}
-.form {
-    display: none;
-}
-.addReview {
-    display: none;
-}
-#reviews {
-    display: none;
-}
-}
+@media (max-width: 400px) {
+    #reviews {
+        display:none;
+
+    }
+};
