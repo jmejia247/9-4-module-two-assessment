@@ -1,0 +1,33 @@
+body {
+    background: lavender;
+    font-family: monospace;
+}
+
+header {
+    width: 75%;
+    background: skyblue;
+    height: 12em;
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+}
+h1 {
+    float: right;
+    margin-right: 20px;
+}
+img {
+    height: 12em;
+    float: left;
+}
+
+section {
+    width: 75%;
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+}
+@media (max-width: 500px) {
+    #reviews {
+        display: none;
+    }
+}
