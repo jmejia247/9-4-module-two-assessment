@@ -1,47 +1,53 @@
 // To ensure Cypress tests work as expeded, add any code/functions that you would like to run on page load inside this function
 
 function run() {
-  // Add code you want to run on page load here
-  const BASE_URL = "https://resource-ghibli-api.onrender.com/films";
-  let select = document.querySelector("select");
-  let form = document.querySelector(".review-form");
-  let input = document.querySelector(".review");
-  let ul = document.querySelector("ul");
-  let li = document.createElement("li");
-  const strong = document.createElement("strong");
+    // Add code you want to run on page load here
+    const BASE_URL = "https://resource-ghibli-api.onrender.com"
+    const BASE_URL_FILMS = `${BASE_URL}/films`;
+    // const BASE_URL_PEOPLE = `${BASE_URL}/people`;
+    const select = document.querySelector("select");
+    const form = document.querySelector(".review-form");
+    const input = document.querySelector(".review");
+    const ul = document.querySelector("ul");
+    const li = document.createElement("li");
+    const strong = document.createElement("strong");
+    const displayInfo = document.querySelector(".display-info");
+    const peopleButton = document.querySelector(".show-people");
 
-  populateSelect(BASE_URL);
+  fetchData(BASE_URL_FILMS);
 
-  async function populateSelect(BASE_URL) {
-    const response = await fetch(BASE_URL);
-    const movie = await response.json();
-    movie.forEach((movie) => {
-      let tag = document.createElement("option");
-      tag.innerHTML = movie.title;
-      tag.value = movie.id;
-      select.append(tag);
-    });
+  async function fetchData(BASE_URL_FILMS) {
+    const response = await fetch(BASE_URL_FILMS);
+    const movies = await response.json();
+    populateSelect(movies);
+   
+  }
+
+  function populateSelect(arr){
+    arr.forEach((movie) => {
+        let tag = document.createElement("option");
+        tag.innerHTML = movie.title;
+        tag.value = movie.id;
+        select.append(tag);
+      });
   }
 
   select.addEventListener("change", (e) => {
-    async function displayMovieInfo(input) {
-      const response = await fetch(
-        `https://resource-ghibli-api.onrender.com/films/${input}`
-      );
-      const movie = await response.json();
-
-      let displayInfo = document.querySelector(".display-info");
-      let title = document.querySelector(".title");
-
-      let releaseDate = document.createElement("p");
-      let description = document.createElement("p");
-
-      title.innerHTML = movie.title;
-      releaseDate.innerHTML = movie.release_date;
-      description.innerHTML = movie.description;
-
-      displayInfo.append(title, releaseDate, description);
-    }
+      async function displayMovieInfo(input) {
+          
+          const response = await fetch(
+              `https://resource-ghibli-api.onrender.com/films/${input}`
+              );
+              const movie = await response.json();
+              let title = document.querySelector(".title");
+              let releaseDate = document.createElement("p");
+              let description = document.createElement("p");
+              title.innerHTML = movie.title;
+              releaseDate.innerHTML = movie.release_date;
+              description.innerHTML = movie.description;
+              displayInfo.append(title, releaseDate, description);
+            }
+            
     displayMovieInfo(e.target.value);
 
     form.addEventListener("submit", (e) => {
@@ -49,8 +55,6 @@ function run() {
 
       let movieReviewed = select.options[select.selectedIndex].text;
       const review = input.value;
-
-      console.log(review);
       strong.textContent = `${movieReviewed}:`;
       li.innerHTML = review;
       li.append(strong);
@@ -64,6 +68,26 @@ function run() {
       e.preventDefault();
       clearElement(ul);
     });
+
+
+ peopleButton.addEventListener("click", (e) => {
+    e.preventDefault();
+    const ol = document.querySelector(".people")
+    async function populatePeople (url) {
+        const response = await fetch("https://resource-ghibli-api.onrender.com/people");
+        const people = await response.json()
+        people.forEach((people) => {
+            const liPeople = document.createElement("li");
+            liPeople.innerHTML = people.name
+            ol.append(liPeople)
+        })
+        
+        console.log(people)
+    }
+    populatePeople()
+ })
+
+
 
     function clearElement(element) {
       element.innerHTML = "";
