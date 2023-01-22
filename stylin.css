@@ -23,3 +23,13 @@ section {
     /* align-self: flex-start; */
     /* padding-left: 50px; */
 }
+
+#reviews {
+    display: block;
+}
+
+@media screen and (max-width: 500px) {
+    #reviews {
+        display: none;
+    }
+}
