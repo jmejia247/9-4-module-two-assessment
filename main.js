@@ -10,10 +10,10 @@ function run() {
     // Add code you want to run on page load here
     
     //base url
-    const BASE_URL = "https://resource-ghibli-api.onrender.com/"
+    const BASE_URL = "https://resource-ghibli-api.onrender.com"
 
     //fetch the api
-    fetch(`${BASE_URL}films/`)
+    fetch(`${BASE_URL}/films/`)
     .then(res => res.json())
     .then(res => {
 
@@ -121,32 +121,27 @@ function run() {
 
         //loop through the people array
         currentMovie.people.forEach(person => {
+            //create an empty list item
+            let personLi = document.createElement("li");
+            
+            //fetch the persons data
+            fetch(`${BASE_URL}${person}`)
+                .then(response => response.json())
+                .then(response => {
+                    //set the person list items text to the name
+                    personLi.textContent = response.name;
+                }) 
+
+            //append the list item to the list
+            peopleList.append(personLi);
 
         })
     })
 
-
-    //.then ends here
     })
-
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//function ends here
+    .catch((err) => {
+        console.log(err);
+    })
 }
 
 // This function will "pause" the functionality expected on load long enough to allow Cypress to fully load
