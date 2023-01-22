@@ -72,25 +72,30 @@ function run() {
         //prevent page from refreshing
         event.preventDefault();
 
-        //check if the review text box has a value
-        //check if the titles box has a movie selected
+        //check if the titles box has no movie selected
+        if (!titles.value) {
+            //send an alert
+            window.alert("Please select a movie first");
+
+            //check if the review text box has a value
+        } else if (!event.target.review.value) {
+            //send an alert
+            window.alert("Please enter a review")
+
+        } else {
+            //get the value from the textbox
+            let review = event.target.review.value;
+            //create a list item
+            let latestReview = document.createElement("li");
+            //set the inner html of the list item
+            latestReview.innerHTML = `<strong>${moviesObj[titles.value].title}:<strong> ${review}`
+            //append the list item to the list
+            reviewsList.append(latestReview);
+
+            //clear the text box
+            event.target.review.value = "";
+        }
         
-
-        //get the value from the textbox
-        let review = event.target.review.value;
-
-        //create list items
-        let latestReview = document.createElement("li");
-
-        //set the inner html of the list item
-        latestReview.innerHTML = `<strong>${moviesObj[titles.value].title}:<strong> ${review}`
-
-        console.log(titles.value)
-        //append the list item to the list
-        reviewsList.append(latestReview);
-
-        //clear the text box
-        event.target.review.value = "";
 
 
     })
