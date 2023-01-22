@@ -10,7 +10,7 @@ body {
 
 header {
     width: 75%;
-    height: 150px;
+    height: 140px;
     background-color: skyblue;
     background-image: url("images/ghibli-logo.png");
     background-size: contain;
@@ -18,17 +18,19 @@ header {
     background-repeat: no-repeat;
     text-align: right;
     align-self: center;
-}
-
-
-.test-img {
-    display: none;
+    padding-right: 10px;
+    /* padding-bottom: 10px; */
 }
 
 section {
     width: 75%;
     margin-left: auto;
     margin-right: auto;
+    /* width: min-content; */
+}
+
+img {
+    max-width: 75%;
 }
 
 #reviews {
@@ -39,4 +41,8 @@ section {
     #reviews {
         display: none;
     }
+}
+
+.test-img {
+    display: none;
 }

@@ -13,6 +13,7 @@ function run() {
     const movPeopleButt = document.querySelector('#show-people');
     const movReview = document.querySelector('#reviews ul');
     const movReviewReset = document.querySelector('#reset-reviews');
+    const movImage = document.querySelector('.movie-img');
 
     // FETCH
     fetch(FILM_URL)
@@ -41,21 +42,23 @@ function run() {
         movDetails.innerHTML = '';
         movPeople.innerHTML = '';
         let pickMovTitle = document.createElement('h3');
-        let pickMovImg = document.createElement('img');
         let pickMovYear = document.createElement('p');
         let pickMovDet = document.createElement('p');
+        
         if (movDrop.value) {
             fetch(`${FILM_URL}${movDrop.value}`)
                 .then((resp) => resp.json())
                 .then((data) => {
                     console.log(data);
                     pickMovTitle.innerText = data.title;
-                    pickMovImg.src = data.image;
+                    movImage.src = data.image;
+                    movImage.alt = `${data.title} poster`;
+                    movImage.className = 'movie-img';
                     pickMovYear.innerText = data.release_date;
                     pickMovDet.innerText = data.description;
 
                     movDetails.append(pickMovTitle, pickMovYear, pickMovDet);
-                    movDetails.after(pickMovImg);
+                    // movDetails.after(movImage);
                     // console.log(pickMovTitle);
 
                     // I originally placed my event listener for the show people button within my code which was looking for a movie title selection and filled in the movie details.  I had to backtrack this idea bc it was creating duplicate event listeners on the same button, which was leading to incorrect SHOW PEOPLE data.  
