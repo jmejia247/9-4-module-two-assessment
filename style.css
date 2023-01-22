@@ -1,11 +1,11 @@
 @media (max-width: 500px) {
-    .img {
+.logoImg {
         display: none;
 }
 .form {
     display: none;
 }
-.addReview {
+.reviewsList {
     display: none;
 }
 #reviews {
