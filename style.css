@@ -1,0 +1,28 @@
+body {
+background-color: lavender;
+font-family: monospace;
+display: grid;
+grid-template-columns: auto;
+grid-template-rows: auto;
+
+}
+@media only screen and (max-width: 500px) {
+    #reviews {
+        display: none;
+    }
+}
+header main {
+   width: 75%;
+  margin-right: auto;
+  margin-left: auto;
+}
+header {
+    background-color: skyblue;
+}
+img{
+  width: fit-content;
+  height: 250px;
+}
+h1 { 
+    display: grid;
+justify-content: end;}

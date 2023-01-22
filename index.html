@@ -14,24 +14,24 @@
     <img src="./images/ghibli-logo.png" alt="Ghibli logo"> 
 </header>  
 <main>
-    <section class="dropdown-section">
+    <section>
         <h2>Select a movie</h2>
-            <select class="dropdown">
+            <select id="titles">
                 <option value="">
                 </option>
             </select>
     </section>
     
-    <section class="review-section">
+    <section>
         <h2> Add a review </h2>
-            <form class="review" id="review" name="review" input="text" type="text">
+            <form>
                 <label for="review">Your review:</label>
                 <input id="review" type="text">
                 <input type="submit">
             </form>
     </section>
     
-    <section class="Movie details">
+    <section>
         <h2>Movie details</h2>
         <div id="display-info"></div>
     </section>
@@ -42,7 +42,8 @@
         <ul></ul>
     </section>
     
-    <section id="people">
+    <section>
+        <ol></ol>
         <button id="show-people">
             Show People
         </button>
