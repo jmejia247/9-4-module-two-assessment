@@ -64,8 +64,12 @@ form.addEventListener('submit', (event) => {
 
         form.reset();
     }
+    const resetReview = document.querySelector('#reset-reviews')
+    resetReview.addEventListener('click', (event) => {
+        event.preventDefault()
+         ul.innerHTML = ''
     })
-
+    })
 // This function will "pause" the functionality expected on load long enough to allow Cypress to fully load
 // So that testing can work as expected for now
 // A non-hacky solution is being researched

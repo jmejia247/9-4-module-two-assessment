@@ -5,20 +5,26 @@ body {
 
 .header {
     background-color: skyblue;
-    width: 75%
+    width: 75%;
+    margin: auto;
 }
 
 .img {
-    width: 150px;
+    width: 50px;
+}
+
+.header img {
+    width: 250px;
 }
 
 h1 {
     text-align: right;
 }
 
-#reviews{
+#reviews {
     display: none;
 }
+
 @media (min-width: 600px) {
     #reviews {
         display: block;
