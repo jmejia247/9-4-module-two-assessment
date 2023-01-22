@@ -1,0 +1,36 @@
+body {
+    background-color: lavender;
+    font-family: monospace;
+    display: flex;
+    flex-direction: column;
+    padding-left: 250px;
+    padding-top: 10px;
+}
+
+.header {
+    background-color: skyblue;
+    width: 75%;
+    margin: 0 auto;
+}
+
+.header img.logo {
+    float: left;
+    height: 200px;
+
+}
+
+#reviews {
+    display: block;
+}
+
+.header h1 {
+    padding-right: 30px;
+    text-align: right;
+}
+
+@media (max-width: 400px) {
+    #reviews {
+        display:none;
+
+    }
+};
