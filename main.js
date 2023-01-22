@@ -2,24 +2,18 @@
 function run() {
 
 
-
     const BASE_URL = 'https://resource-ghibli-api.onrender.com/films';
 
-    let dropdown = document.querySelector(".dropdown")
-
     fetch(`${BASE_URL}`)
-    .then(res => res.json())
-    .then(res => {
-        console.log(res)
-        
-        // data.results.forEach(character => {
-        //     // console.log(character)
-        //     let tag = document.createElement("option")
-        //     tag.innerText = character.name
-        //     tag.value = character.id
-        //     dropdown.append(tag)
-        // });
-    })
+    .then((response) => response.json())
+    .then((films) => {
+        const movies = document.querySelector(".dropdown");
+        for (const film of films) {
+            const option = document.createElement("option");
+            option.textContent = film.title;
+            option.setAttribute("value", film.title);
+            movies.append(option)
+        }})
 
 
 
