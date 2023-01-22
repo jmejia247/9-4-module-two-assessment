@@ -1,0 +1,20 @@
+body {
+background-color: lavender;
+font-family: monospace;
+text-align: center;
+}
+
+@media (max-width: 500px) {
+    #reviews {
+        display:none
+    }
+}
+
+header {
+    background-color: aqua;
+    text-align: center;
+}
+
+.h1 {
+    text-align: end;
+}
