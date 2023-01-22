@@ -12,15 +12,49 @@
 <header>
     <div class="parentHeader">
         <div class="div1">
-            <img src="ghibli-logo.png" alt="Ghibli studio logo"/> 
+            <img src="./ghibli-logo.png" alt="Ghibli studio logo"/> 
         </div>
         <div class="div2">
             <h1>Ghibli Review App</h1>
         </div>
     </div>
 </header>
-    <div class="parent">
+<main>
 
-    </div>
+        <section>
+            <h2>Select a movie</h2>
+            select id titles
+        </section>
+        <section>
+            <h2>Add a review</h2>
+            <form>
+                <label for="review"></label>
+                <input id="review" type="text">
+                <input type="submit">
+            </form>
+        </section>
+        <section>
+            <h2>Movie details</h2>
+            <div id="display-info" placeholder="">
+                <h3 id="displayH3">
+                    <p id="displayP1"></p>
+                    <p id="displayP2"></p>
+                </h3>
+            </div>
+        </section>
+        <section>
+            <h2>People</h2>
+            <ol></ol>
+            <button id="show-people">Show People</button>
+        </section>
+        <section id="reviews">
+            <h2>Reviews</h2>
+            <ul></ul>
+            <button id="reset-reviews" type="button"  class="buttonRight">Reset Reviews</button>
+        </section>
+
+
+</main>
+
 </body>
 </html>
