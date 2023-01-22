@@ -1,0 +1,16 @@
+body{
+    background-color: lavender;
+    font-family: monospace;
+    
+}
+header,img{
+    text-align: center;
+    background-color: skyblue;
+}
+header{
+    width: 75%;
+    
+}
+h1{
+    position: absolute;top:0;right:0;
+}
