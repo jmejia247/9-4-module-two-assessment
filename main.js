@@ -31,12 +31,49 @@ titles.addEventListener('change', (event) => {
     fetch(`https://resource-ghibli-api.onrender.com/films/${titles.value}`)
     .then((response) => response.json())
     .then((response) => {
-        if(titles.value)
+        if (titles.value)
         movieTitle.innerHTML = response.title;
-        releaseDate.innerHTML = response.release_Date;
+        releaseDate.innerHTML = response.release_date;
         description.innerHTML = response.description;
     });
 });
+
+contact.addEventListener('submit', (e) => {
+    e.preventDefault();
+    if (!titles.value) {
+        alert('Please select a movie first');
+     }  else {
+        let inputReview = document.createElement('li');
+        inputReview.classList.add('inputReview')
+        inputReview.innerHTML = `<b>${movieTitle.innerText}.</b>: ${addReview.value}`;
+        ownReview.append(inputReview);
+        //form.reset();
+     }
+})
+
+reviews.addEventListener('click', (e) => {
+    e.preventDefault();
+    const allReviews = document.querySelectorAll('.inputReview');
+    allReviews.forEach((li) => {
+        li.remove();
+    })
+})
+
+userData.addEventListener('click', (e) => {
+    e.preventDefault();
+    fetch('https://resource-ghibli-api.onrender.com/people/')
+    .then((response) => response.json())
+    .then((response) => {
+        let people = response.filter((person) => {
+            return (person.id =titles.value);
+        });
+        people.forEach((person) => {
+            let name = document.createElement('li');
+            name.innerHTML = person.name
+            peopleShow.append(name)
+        })
+    })
+})
 
 // This function will "pause" the functionality expected on load long enough to allow Cypress to fully load
 // So that testing can work as expected for now
