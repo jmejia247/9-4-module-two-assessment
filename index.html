@@ -10,7 +10,7 @@
 </head>
 <body>
     <header class="header">
-        <img src="images/ghibli-logo.png"
+        <img src="./images/ghibli-logo.png" alt="Ghibli logo" />
         <h1><strong>Ghibli Review App</strong></h1>
     </header>
     <main>
@@ -21,6 +21,17 @@
                 <!-- set these inner values below to empty strings -->
                 <option id ="" value=""></option>
             </select>
+        </section>
+        <!-- MOVIE DESCRIPTION BELOW -->
+        <section class="movie-description">
+            <h2>Movie details</h2>
+            <div id="display-info"></div>
+        </section>
+        <!-- PEOPLE SECTION BELOW -->
+        <section class="people-in-movie">
+            <h2>People</h2>
+            <ol id="characters" class="hidden"></ol>
+            <button id="show-people">Show People</button>
         </section>
         <!-- REVIEW SECTION BELOW -->
         <section class="movie-reviews" id="review">
@@ -34,19 +45,9 @@
         <section id="reviews">
             <h2>Reviews</h2>
             <ul class="list-review"></ul>
-            <button id="reset-the-review">Reset Reviews</button>
+            <button id="reset-reviews">Reset Reviews</button>
         </section>
-        <!-- MOVIE DESCRIPTION BELOW -->
-        <section class="movie-description">
-            <h2>Movie details</h2>
-            <div id="display-movie-info"></div>
-        </section>
-        <!-- PEOPLE SECTION BELOW -->
-        <section class="people-in-movie">
-            <h2>People</h2>
-            <ol id="characters" class="hidden"></ol>
-            <button id="show-people">Show People</button>
-        </section>
+        
     </main>
 </body>
 </html>

@@ -7,13 +7,18 @@ body {
     margin: 0;
     padding: 0;
 }
-
 header {
     background-color: skyblue;
-    width: 75%;
-    height: 75%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    height: 150px;
 }
-
+header img {
+    height: 150px;
+}
+header h1{
+    margin: 0%;
+}
 .hidden {
     display: none;
 }
