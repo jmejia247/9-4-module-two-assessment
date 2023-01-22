@@ -1,0 +1,39 @@
+body {
+    display: grid;
+    text-align: center;
+    background-color: lavender;
+    font-family: monospace;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color:skyblue;
+    position: relative;
+    margin: 0 auto;
+    padding: 0;
+    align-items: left;
+    padding: 0px 0px;
+    width: 75%;
+    font-family: monospace;
+}
+
+h1 {
+    font-family: monospace;
+    font-size: 40px;
+    margin: 0;
+    padding: 0;
+}
+
+#fixed-header {
+
+}
+
+#logo img {
+    width: 75%;
+    background-color: skyblue;
+}
+
+#titles:hover {
+    cursor: pointer;
+}

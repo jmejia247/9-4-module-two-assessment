@@ -8,6 +8,23 @@
 
 function run() {
  // Add code you want to run on page load here
+
+ const getTitles = document.querySelector('select');
+ const ul = document.querySelector('')
+
+ fetch("https://resource-ghibli-api.onrender.com/films")
+    .then(response => response.json())
+    .then(movies => {
+        console.log(movies);
+    
+    let currMovie = "";
+    movies.forEach(movie => {
+
+    })
+
+
+    })
+
 }
 
 // This function will "pause" the functionality expected on load long enough to allow Cypress to fully load
