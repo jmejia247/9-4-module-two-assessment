@@ -61,11 +61,11 @@ reviews.addEventListener('click', (e) => {
 
 userData.addEventListener('click', (e) => {
     e.preventDefault();
-    fetch('https://resource-ghibli-api.onrender.com/people/')
+    fetch('https://resource-ghibli-api.onrender.com/people')
     .then((response) => response.json())
     .then((response) => {
         let people = response.filter((person) => {
-            return (person.id =titles.value);
+            return (person.id = titles.value);
         });
         people.forEach((person) => {
             let name = document.createElement('li');
