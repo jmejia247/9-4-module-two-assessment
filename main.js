@@ -5,10 +5,10 @@
 
 
 // To ensure Cypress tests work as expeded, add any code/functions that you would like to run on page load inside this function
-
+const URL = "https://resource-ghibli-api.onrender.com"
 function run() {
     const dropdown = document.querySelector(".dropdown");
-    fetch (`https://resource-ghibli-api.onrender.com/films`).
+    fetch (`${URL}/films`).
     then(response => response.json()).
     then(data => {
         for (let i = 0; i <data.length; i++) {
@@ -53,11 +53,11 @@ function run() {
 // So that testing can work as expected for now
 // A non-hacky solution is being researched
 
-setTimeout(run, 2000);
+setTimeout(run, 1000);
 
 const addReview = function fAddReview (event) {
     event.preventDefault();
-    const unorderedList = document.getElementById("reviewUL");
+    const unorderedList = document.getElementById("reviews");
     const listItemReview = document.createElement("li");
     const strongTitle = document.createElement("strong");
     const reviewText = document.getElementById("review").value;
@@ -73,7 +73,7 @@ const addReview = function fAddReview (event) {
 }
 
 const removeReviews = function fRemoveReviews (event) {
-    const unorderedList = document.getElementById("reviewUL");
+    const unorderedList = document.getElementById("reviews");
     unorderedList.innerHTML = "";
 }
 
