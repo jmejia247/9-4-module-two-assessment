@@ -1,0 +1,25 @@
+body {
+    background-color: lavender;
+    font-family: monospace;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+header {
+    width: 75%;
+    background-color: skyblue;
+    display: grid;
+    grid-template-areas: "img title "
+    "img ."; 
+
+}
+
+header h1 {
+    grid-area: title;
+}
+
+header img {
+    grid-area: img;
+}
