@@ -64,7 +64,7 @@ function run() {
             movieTitle.textContent = currentMovie.title
             releaseYear.textContent = currentMovie['release_date']
             movieDesc.textContent = currentMovie.description
-            movieDesc.style.width = "450px";
+            movieDesc.style.maxWidth = "700px";
 
             //append to the div
             displayDiv.append(movieTitle);
@@ -97,7 +97,7 @@ function run() {
             //create a list item
             let latestReview = document.createElement("li");
             //set the inner html of the list item
-            latestReview.innerHTML = `<strong>${currentMovie.title}:<strong> ${review}`
+            latestReview.innerHTML = `<strong>${currentMovie.title}:</strong> ${review}`
             //append the list item to the list
             reviewsList.append(latestReview);
 
