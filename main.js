@@ -15,7 +15,10 @@ function run() {
     .then(res => {
 
     //get the dropdown box
-    let titles = document.getElementById("titles");
+    const titles = document.getElementById("titles");
+
+    //create an empty object to store the movie data
+    const moviesObj = {};
 
     //loop through the movies
     res.forEach(movie => {
@@ -23,14 +26,75 @@ function run() {
         let movieOption = document.createElement("option");
         //set the value and text of the option to the movie title
         movieOption.text = movie.title;
-        movieOption.value = movie.title;
+        movieOption.value = movie.id;
         //append the option to the titles selection box
         titles.append(movieOption);
+        
+        //assign the movie to the opject using the movie id as key
+        moviesObj[movie.id] = movie;
     });
 
-
-
     
+    //get the display div
+    const displayDiv = document.getElementById("display-info");
+    //what happens when the movie changes
+    titles.addEventListener("change", (event) => {
+
+        //clear the display div
+        displayDiv.innerHTML = "";
+
+        //check if theres a value 
+        if (event.target.value) {
+            //create an h3, and 2 p tags
+            let movieTitle = document.createElement("h3");
+            let releaseYear = document.createElement("p");
+            let movieDesc = document.createElement("p");
+
+            //assign value to the new elements
+            movieTitle.textContent = moviesObj[event.target.value].title
+            releaseYear.textContent = moviesObj[event.target.value]['release_date']
+            movieDesc.textContent = moviesObj[event.target.value].description
+            movieDesc.style.width = "450px";
+
+            //append to the div
+            displayDiv.append(movieTitle);
+            displayDiv.append(releaseYear);
+            displayDiv.append(movieDesc);
+        }
+    })
+
+    //get the reviews section list
+    const reviewsList = document.querySelector("ul") 
+
+
+    //what to do when form is submitted
+    document.querySelector("form").addEventListener("submit", (event) => {
+        //prevent page from refreshing
+        event.preventDefault();
+
+        //check if the review text box has a value
+        //check if the titles box has a movie selected
+        
+
+        //get the value from the textbox
+        let review = event.target.review.value;
+
+        //create list items
+        let latestReview = document.createElement("li");
+
+        //set the inner html of the list item
+        latestReview.innerHTML = `<strong>${moviesObj[titles.value].title}:<strong> ${review}`
+
+        console.log(titles.value)
+        //append the list item to the list
+        reviewsList.append(latestReview);
+
+        //clear the text box
+        event.target.review.value = "";
+
+
+    })
+
 
 
 
