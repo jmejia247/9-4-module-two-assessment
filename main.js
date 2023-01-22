@@ -3,6 +3,12 @@ const dropdown = document.getElementById('titles')
 const info = document.getElementById('display-info')
 const showPeople = document.getElementById('show-people')
 const people = document.querySelector('ol')
+const form = document.querySelector('form')
+const reviews = document.querySelector('ul')
+
+function noSelection(){
+    window.alert(`Please select a movie first`)
+}
 
 // To ensure Cypress tests work as expeded, add any code/functions that you would like to run on page load inside this function
 
@@ -36,6 +42,10 @@ dropdown.addEventListener('change', (e)=>{
     fetch(`${mainURL}/films/${dropdown.value}`)
     .then((res)=> res.json())
     .then((film)=>{
+        if (dropdown.value == film.id){
+            movieTitle = film.title
+        }
+
         console.log(film)
         let title = document.createElement('h3')
         title.innerText = film.title
@@ -48,6 +58,26 @@ dropdown.addEventListener('change', (e)=>{
         let description = document.createElement('p')
         description.innerText = film.description
         info.append(description)
+
+        form.addEventListener('submit', (e)=>{
+            e.preventDefault()
+            let input = e.target.review.value
+
+            if (dropdown.value == ``){
+                noSelection()
+            } else {
+                let li = document.createElement('li')
+                if (input == ``){
+                    li.innerHTML = ``
+                } else {
+                    li.innerHTML = `
+                    <strong>${movieTitle}:</strong> ${input}
+                    `
+                    reviews.append(li)
+                }
+            }
+            e.target.reset()
+        })
 
         showPeople.addEventListener('click', (e)=>{
             e.preventDefault()
@@ -62,10 +92,10 @@ dropdown.addEventListener('change', (e)=>{
                     personName.innerText = person.name
                     people.append(personName)
                 })
-                
-
             }
             //person.innerText = 
         })
     })
 })
+
+
