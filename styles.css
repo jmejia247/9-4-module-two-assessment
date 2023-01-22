@@ -25,11 +25,7 @@ h1 {
     padding: 0;
 }
 
-/* #fixed-header {
-
-} */
-
-#logo {
+img {
     width: 75%;
     background-color: skyblue;
 }
@@ -37,3 +33,13 @@ h1 {
 #titles:hover {
     cursor: pointer;
 }
+
+ul {
+    list-style-type: none;
+}
+
+@media screen and (max-width: 500px) {
+    section#reviews {
+      display: none;
+    }
+  }
