@@ -1,5 +1,42 @@
 @media (max-width: 500px) {
     .img {
         display: none;
-    }
-    
+}
+.form {
+    display: none;
+}
+.addReview {
+    display: none;
+}
+#reviews {
+    display: none;
+}
+}
+
+
+body {
+    background-color: lavender;
+    font-family: monospace;
+    display: flex;
+    flex-direction: column;
+    padding-left: 250px;
+    padding-top: 10px;
+}
+
+.header.header {
+    background-color: skyblue;
+    width: 75%
+}
+
+.header img.logoImg {
+    float: left;
+    height: 200px;
+
+}
+
+.header h1 {
+    padding-right: 30px;
+    text-align: right;
+}
+
+
