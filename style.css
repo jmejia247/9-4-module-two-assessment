@@ -1,0 +1,48 @@
+body {
+    background-color: lavender;
+    font-family: monospace;
+}
+
+body header {
+    margin: auto;
+    width: 75%;
+    background-color: skyblue;
+    display: inline-block;
+}
+
+body header img {
+    float: left;
+    max-height: 200px;
+}
+
+body header h1 {
+    float: right;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+}
+
+.dropdown {
+    min-width: 200px;
+}
+
+@media (max-width: 500px) {
+    section#reviews{
+        display: none;
+    }
+    ul#reviews {
+        display: none;
+    }
+}
+
+@media (min-width: 501px) {
+    section#reviews {
+        display: block;
+    }
+    ul#reviews {
+        display: block;
+    }
+}
