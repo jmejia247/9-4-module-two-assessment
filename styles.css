@@ -1,0 +1,30 @@
+body{
+    background-color: lavender;
+    font-family: monospace;
+    display: grid;
+    grid-template-rows: 16.5% auto auto auto atuo auto;
+}
+.header{
+    background-color: skyblue;
+    width: 75%;
+    display: grid;
+    position: relative;
+    left: 12.5%;
+}
+img{
+position: absolute;
+height: 100%;
+}
+/* h1{
+    position: absolute;
+    top:0px;
+    right: 0px;
+
+} */
+
+@media only screen and (max-width: 500px){
+    #reviews {
+        display: none;
+    }
+
+}
