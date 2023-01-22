@@ -1,0 +1,59 @@
+body {
+    background-color: lavender;
+    font-family: monospace;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+header {
+    width: 75%;
+    height: 140px;
+    background-color: skyblue;
+    background-image: url("images/ghibli-logo.png");
+    background-size: contain;
+    background-position: left;
+    background-repeat: no-repeat;
+    text-align: right;
+    align-self: center;
+    padding-right: 10px;
+    border-style: ridge;
+    border-width: 8px;
+    border-color: darkseagreen;
+    border-radius: 50px;
+    box-shadow: 10px 5px 20px darkseagreen;
+    /* padding-bottom: 10px; */
+}
+
+section {
+    width: 75%;
+    margin-left: auto;
+    margin-right: auto;
+    /* width: min-content; */
+}
+
+img {
+    display: none;
+    max-width: 30%;
+    border-style: ridge;
+    border-width: 8px;
+    border-color: darkseagreen;
+    border-radius: 50px;
+    box-shadow: 10px 5px 20px darkseagreen;
+}
+
+#reviews {
+    display: block;
+}
+
+@media screen and (max-width: 500px) {
+    #reviews {
+        display: none;
+    }
+}
+
+.test-img {
+    display: none;
+}
