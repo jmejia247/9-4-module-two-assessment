@@ -19,6 +19,8 @@ h1 {
 #reviews{
     display: none;
 }
-#reviews{
-    display: block;
+@media (min-width: 600px) {
+    #reviews {
+        display: block;
+    }
 }
