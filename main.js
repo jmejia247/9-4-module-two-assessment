@@ -26,9 +26,12 @@ fetch(`https://resource-ghibli-api.onrender.com/films`).then(response => respons
 
 
 
-selectDrop.addEventListener("change", (event) => {
+selectDrop.addEventListener("change", async (event) => {
+    event.preventDefault()
 
 //console.log(selectDrop.value)
+
+
 
 fetch(`https://resource-ghibli-api.onrender.com/films/${selectDrop.value}`).then(response => response.json()).then(id => {
     console.log(id)
@@ -49,13 +52,50 @@ fetch(`https://resource-ghibli-api.onrender.com/films/${selectDrop.value}`).then
     movieDetails.append(description)
 
     const form = document.querySelector('form')
+    const userInput = document.querySelector(".user-review")
     
-    form.addEventListener('submit',(event) => {
+    form.addEventListener('submit', async (event) => {
         event.preventDefault()
 
-        
+    const li = document.createElement('li')
+
+    li.innerHTML = 
+    `<span><strong>${id.title}:</strong> ${event.target.review.value}</span>`
+    
+    userInput.append(li)
+
+    document.getElementById('review').value = ""
+
+    const people = document.querySelector('#show-people')
+    const listNum = document.querySelector('ol')
+
+
+    people.addEventListener('click', async (event) => {
+        event.preventDefault()
+        id.people.forEach(names => {
+
+            const castName = document.createElement('li')
+            castName.textContent = names
+
+            listNum.append(castName)
+
+        })
+    })
+
+    const clearReviews = document.querySelector('#reset-reviews')
+
+    clearReviews.addEventListener('click', async (event) => {
+        event.preventDefault()
+
+        if(userInput){
+            userInput.remove()
+        }
+
+    })
+
     })
 })
+
 
 })
 }

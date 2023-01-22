@@ -1,6 +1,8 @@
 body {
     background-color: lavender;
     font-family: monospace;
+    flex-direction: column;
+    align-items: center;
 }
 
 header {
@@ -10,4 +12,15 @@ header {
 
 img {
     width: 100px;
+}
+
+.reviews {
+    display: block;
+
+}
+
+@media (max-width: 500px) {
+    #reviews {
+        display: none;
+    }
 }
