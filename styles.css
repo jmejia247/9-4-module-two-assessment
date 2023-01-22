@@ -1,0 +1,36 @@
+body {
+    background-color: lavender;
+    font-family: monospace;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+header {
+    width: 75%;
+    background-color: skyblue;
+    display: grid;
+    grid-template-areas: "img title "
+    "img ."; 
+
+}
+
+header h1 {
+    grid-area: title;
+}
+
+header img {
+    grid-area: img;
+}
+
+#reviews {
+    display: block;
+
+}
+
+@media (max-width:500px) {
+    #reviews {
+        display: none;
+    }
+}
