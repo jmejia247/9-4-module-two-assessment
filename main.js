@@ -79,23 +79,46 @@ dropdown.addEventListener('change', (e)=>{
                 }
             }
         })
-
+        
         showPeople.addEventListener('click', (e)=>{
             e.preventDefault()
-            people.innerHTML = ``
-            for (let i = 0; i<film.people.length; i++){
-                fetch(`${mainURL}${film.people[i]}`)
-                .then((res)=> res.json())
-                .then((person)=>{
-                    console.log(person)
-                    
-                    let personName = document.createElement('li')
-                    personName.innerText = person.name
-                    people.append(personName)
+            fetch(`${mainURL}/people`)
+            .then((res)=>res.json())
+            .then((people1)=>{
+                people1.forEach((person)=>{
+                    let random = document.createElement('p')
+                    random.innerText = person.films
+                    //console.log(random)
+                    if (random.innerHTML.includes(dropdown.value)){
+                        console.log(person.name)
+                        let personName = document.createElement('li')
+                        personName.innerText = person.name
+                        people.append(personName)
+
+                    }
                 })
-            }
-            //person.innerText = 
+                
+            })
+
         })
+
+        // showPeople.addEventListener('click', (e)=>{
+        //     e.preventDefault()
+        //     people.innerHTML = ``
+        //     for (let i = 0; i<film.people.length; i++){
+        //         console.log(`fetch people`, film.people[i])
+        //         fetch(`${mainURL}${film.people[i]}`)
+        //         .then((res)=> res.json())
+        //         .then((person)=>{
+            //             console.log(person)
+            //             let personName = document.createElement('li')
+            //             personName.innerText = person.name
+            //             people.append(personName)
+            
+        //         })
+        //     }
+        //     //person.innerText = 
+        // })
     })
 })
 
