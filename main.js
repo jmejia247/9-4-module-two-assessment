@@ -7,6 +7,23 @@
 // To ensure Cypress tests work as expeded, add any code/functions that you would like to run on page load inside this function
 
 function run() {
+
+    const BASE_URL = 'https://resource-ghibli-api.onrender.com/films';
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
  // Add code you want to run on page load here
 }
 
