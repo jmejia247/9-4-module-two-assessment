@@ -1,14 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="./index.js" async ></script>
-    <link rel="stylesheet" href="./main.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script  src="./main.js" async ></script>
+    <link rel="stylesheet" href="./main.css" />
     <title>Studio Ghibli Assesment module 2</title>
-</head>
-<body>
+  </head>
+  <body>
+    <header>
+      <img src="./images/ghibli-logo.png" alt="Ghibli logo" />
+      <h1>Ghibli Review App</h1>
+    </header>
 
-</body>
+    <main>
+      <section>
+        <h2>Select a movie</h2>
+        
+          <select name="" id="select"></select>
+          <option value=""></option>
+        
+      </section>
+
+      
+      <section id="review">
+          <h2>Add a review</h2>
+          <form >
+              <label for="review">Your review</label>
+              <input type="text" class="review" />
+              <input type="submit" value="submit" />
+            </form>
+        </section>
+        
+        <section>
+            <h2 class="title">Movie Details</h2>
+            <div class="display-info"></div>
+        </section>
+
+      <section>
+        <h2>people</h2>
+        <ol class="people"></ol>
+        <button id="show-people">Show People</button>
+      </section>
+
+      <section id="reviews">
+        <h2>Reviews</h2>
+        <ul></ul>
+        <button id ="reset-reviews">Reset Reviews</button>
+      </div>
+    </main>
+  </body>
 </html>
