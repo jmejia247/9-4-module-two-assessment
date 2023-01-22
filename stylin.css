@@ -19,6 +19,11 @@ header {
     text-align: right;
     align-self: center;
     padding-right: 10px;
+    border-style: ridge;
+    border-width: 8px;
+    border-color: darkseagreen;
+    border-radius: 50px;
+    box-shadow: 10px 5px 20px darkseagreen;
     /* padding-bottom: 10px; */
 }
 
@@ -30,7 +35,13 @@ section {
 }
 
 img {
+    display: none;
     max-width: 75%;
+    border-style: ridge;
+    border-width: 8px;
+    border-color: darkseagreen;
+    border-radius: 50px;
+    box-shadow: 10px 5px 20px darkseagreen;
 }
 
 #reviews {

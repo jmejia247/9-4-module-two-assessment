@@ -53,7 +53,7 @@ function run() {
                     pickMovTitle.innerText = data.title;
                     movImage.src = data.image;
                     movImage.alt = `${data.title} poster`;
-                    movImage.className = 'movie-img';
+                    movImage.style.display = 'block';
                     pickMovYear.innerText = data.release_date;
                     pickMovDet.innerText = data.description;
 
