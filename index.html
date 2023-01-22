@@ -13,47 +13,51 @@
 <body>
     <header>
         <h1>Ghibli Review App</h1>
+        <img src="./images/ghibli-logo.png" alt="Ghibli logo">
     </header>
 
-    <section class="movie-drop">
-        <h2>Select a movie</h2>
-        <select name="movies" id="titles">
-            <!-- Here is where the movie titles will go -->
-            <option value="" id=""></option>
-        </select>
-    </section> 
+    <main>
+        <section class="movie-drop">
+            <h2>Select a movie</h2>
+            <select name="movies" id="titles">
+                <!-- Here is where the movie titles will go -->
+                <option value="" id=""></option>
+            </select>
+        </section> 
+    
+        <section class="review-enter">
+            <h2>Add a review</h2>
+            <form>
+                <label for="review">Your review</label>
+                <input type="text" id="review">
+                <input type="submit">
+            </form>
+        </section>
+    
+        <section class="movie-details">
+            <h2>Movie details</h2>
+            <div id="display-info">
+                <!-- WIll be populated w/ H3 & 2 P tags -->
+            </div>
+        </section>
+    
+        <section class="people">
+            <h2>People</h2>
+            <ol>
+                <!-- WIll be populated with LI tags as people NAMES are added -->
+            </ol>
+            <button id="show-people">Show People</button>
+        </section>
+    
+        <section id="reviews">
+            <h2>Reviews</h2>
+            <ul>
+                <!-- Reviews will be added here -->
+            </ul>
+            <button id="reset-reviews">Reset Reviews</button>
+        </section>
 
-    <section class="review-enter">
-        <h2>Add a review</h2>
-        <form>
-            <label for="review">Your review</label>
-            <input type="text" id="review">
-            <input type="submit">
-        </form>
-    </section>
-
-    <section class="movie-details">
-        <h2>Movie details</h2>
-        <div id="display-info">
-            <!-- WIll be populated w/ H3 & 2 P tags -->
-        </div>
-    </section>
-
-    <section class="people">
-        <h2>People</h2>
-        <ol>
-            <!-- WIll be populated with LI tags as people NAMES are added -->
-        </ol>
-        <button id="show-people">Show People</button>
-    </section>
-
-    <section id="reviews">
-        <h2>Reviews</h2>
-        <ul>
-            <!-- Reviews will be added here -->
-        </ul>
-        <button id="reset-reviews">Reset Reviews</button>
-    </section>
+    </main>
 
 </body>
 

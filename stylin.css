@@ -4,6 +4,8 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 header {
@@ -15,13 +17,18 @@ header {
     background-position: left;
     background-repeat: no-repeat;
     text-align: right;
-    /* align-self: center; */
+    align-self: center;
+}
+
+
+img {
+    display: none;
 }
 
 section {
     width: 75%;
-    /* align-self: flex-start; */
-    /* padding-left: 50px; */
+    margin-left: auto;
+    margin-right: auto;
 }
 
 #reviews {
