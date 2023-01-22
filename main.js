@@ -1,6 +1,15 @@
 
 
+const BASE_URL = `https://resource-ghibli-api.onrender.com`
+const FILMS_URL = `${BASE_URL}/films`
+const PPL_URL = `${BASE_URL}/people` 
+//Below lets try to add some flair invoking the Japanes names
+const OGNAME_URL = `${BASE_URL}/films/original_title`
 
+fetch(BASE_URL)
+
+let dropItLow = document.querySelector(".dropdown")
+//we use ".___" inside of the querySelector so it knows we are talking to the HTML doc.
 
 
 
