@@ -40,6 +40,7 @@ dropdown.addEventListener("change", (event) => {
             filmDetails(movie);
             userReview(movie);
             showPeople(movie);
+            resetPeople();
         })
     })
 }
@@ -79,12 +80,13 @@ function showPeople(movie) {
         event.preventDefault();
         let ol = document.querySelector("ol");
         let id = movie.id;
+
+
         async function fetchAsync() {
             let response = await fetch(`https://resource-ghibli-api.onrender.com/people`);
             let data = await response.json();
             return data;
         }
-        
         fetchAsync()
             .then(people => {
                 for (person of people) {
