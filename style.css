@@ -1,0 +1,30 @@
+body {
+    background-color: lavender;
+    font-family: monospace;
+}
+
+.parent {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    grid-template-rows: repeat (6, 1fr);
+    grid-column-gap: 0px;
+    grid-row-gap: 15 px;
+}
+
+.headerParent {
+    grid-template-columns: 1fr 2fr 1fr;
+    grid-template-rows: repeat (2, 1fr);
+    grid-column-gap: 0px;
+    grid-row-gap: 15 px;
+    max-width: 75%;
+}
+.div1 {grid-area: 1/1/3/2;}
+.div2 {grid-area: 1/3/2/4;
+    text-align: right;
+
+}
+
+header {
+    background-color: skyblue;
+    
+}
