@@ -47,7 +47,7 @@ function run() {
        // console.log(data.results.title)
      //  data.results.forEach((id) => {
       //     console.log(id)
-       })
+       }
    
    .then((response) => {
        response(json())
@@ -86,4 +86,11 @@ function run() {
    // A non-hacky solution is being researched
    
    setTimeout(run, 1000);
+
    
+
+   /*
+
+   expected option to have a value of ''
+
+   display none for the review section is less than 
