@@ -124,7 +124,6 @@ function run() {
 
         //create an object to store the people
         let peopleObj = {};
-        let count = 0;
 
         //loop through the people array
         currentMovie.people.forEach(person => {
@@ -137,27 +136,28 @@ function run() {
                 peopleObj[personId]= personId;
                 
             }
+        })
 
                 //fetch the persons data
-                fetch(`${BASE_URL}/people/`)
-                    .then(response => response.json())
-                    .then(response => {
-                        //loop through the response array
-                        for (let i = 0; i < response.length; i++) {
-                            //check if the id exists
-                            if (peopleObj[response[i].id] !== undefined){
-                                //change the objects values to the names
-                                peopleObj[response[i].id] = response[i].name;
-                            }
+        fetch(`${BASE_URL}/people/`)
+            .then(response => response.json())
+            .then(response => {
+                //loop through the response array
+                for (let i = 0; i < response.length; i++) {
+                    //check if the id exists
+                    if (peopleObj[response[i].id] !== undefined){
+                        //change the objects values to the names
+                        peopleObj[response[i].id] = response[i].name;
+                    }
 
-                        }
-                        
-                    })
-                    .catch((error) => {
-                        console.log(error);
-                    })
+                }
+                
+            })
+            .catch((error) => {
+                console.log(error);
+            })
 
-        })
+        
         //run this after a second
         setTimeout(()=>{
             //loop through the people object
