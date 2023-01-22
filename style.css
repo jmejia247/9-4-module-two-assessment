@@ -33,22 +33,16 @@ header {
     text-align: right;
 }
 
-#reviews .reviews section.reviews section#reviews{
-    display:block
+#reviews {
+    display:block;
 }
 
 @media only screen and (min-width:500px){
-    #reviews #reviewSection { 
+    #reviews { 
         display: none; 
-        background-color: yellow;
     }
 }     
 
-@media only screen and (min-width: 500px) {
-    .reviews .reviewSection section#reviews section.reviews{ 
-        display: none; 
-        background-color: yellow;
-    }
-}     
+ 
 
 
