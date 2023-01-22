@@ -40,6 +40,10 @@ function run() {
     
     //get the display div
     const displayDiv = document.getElementById("display-info");
+
+    //create a variable for the current movie selected
+    let currentMovie;
+
     //what happens when the movie changes
     titles.addEventListener("change", (event) => {
 
@@ -48,15 +52,18 @@ function run() {
 
         //check if theres a value 
         if (event.target.value) {
+            //set the value of the current movie
+            currentMovie = moviesObj[event.target.value];
+
             //create an h3, and 2 p tags
             let movieTitle = document.createElement("h3");
             let releaseYear = document.createElement("p");
             let movieDesc = document.createElement("p");
 
             //assign value to the new elements
-            movieTitle.textContent = moviesObj[event.target.value].title
-            releaseYear.textContent = moviesObj[event.target.value]['release_date']
-            movieDesc.textContent = moviesObj[event.target.value].description
+            movieTitle.textContent = currentMovie.title
+            releaseYear.textContent = currentMovie['release_date']
+            movieDesc.textContent = currentMovie.description
             movieDesc.style.width = "450px";
 
             //append to the div
@@ -90,7 +97,7 @@ function run() {
             //create a list item
             let latestReview = document.createElement("li");
             //set the inner html of the list item
-            latestReview.innerHTML = `<strong>${moviesObj[titles.value].title}:<strong> ${review}`
+            latestReview.innerHTML = `<strong>${currentMovie.title}:<strong> ${review}`
             //append the list item to the list
             reviewsList.append(latestReview);
 
@@ -105,8 +112,18 @@ function run() {
         reviewsList.innerHTML = "";
     })
 
+    //get the ordered list
+    const peopleList = document.querySelector("ol");
+    //what the show people button does when clicked
+    document.getElementById("show-people").addEventListener("click", () => {
+        //clear the list 
+        peopleList.innerHTML = "";
 
+        //loop through the people array
+        currentMovie.people.forEach(person => {
 
+        })
+    })
 
 
     //.then ends here
