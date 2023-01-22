@@ -13,15 +13,15 @@ function run() {
     const showPeople = document.getElementById("show-people")
     const people = document.getElementById("people")
 
-    console.log(h2.innerText)
+    console.log(select.value)
 
     submit.addEventListener("click", event => {
         event.preventDefault()
-        if(h2.innerText === "Select a movie"){
-        alert("Please select a movie first")
-        }   
+        if (h2.innerText === "Select a movie") {
+            alert("Please select a movie first")
+        }
     })
-    
+
 
 
     fetch(
@@ -47,8 +47,9 @@ function run() {
         ).then(response => response.json()
         ).then(result => {
 
+            console.log(select.innerText)
             if (result.title) {
-            h2.innerText = ""
+                h2.innerText = ""
             }
 
             displayInfo.innerHTML = `
@@ -62,12 +63,15 @@ function run() {
 
         submit.addEventListener("click", (event) => {
             let h3 = document.querySelector("h3")
-            if (review.value) {
+            if (h3.innerText === "undefined") {
+                alert("Please select a movie first")
+            } else if (review.value) {
                 ul.innerHTML += `
             <li><strong>${h3.innerText}:</strong> ${review.value}</li>
             `
                 review.value = ""
             }
+
 
         })
 
