@@ -7,10 +7,13 @@
 // To ensure Cypress tests work as expeded, add any code/functions that you would like to run on page load inside this function
 
 function run() {
-// Add code you want to run on page load here
+    // Add code you want to run on page load here
+    
+    //base url
+    const BASE_URL = "https://resource-ghibli-api.onrender.com/"
 
     //fetch the api
-    fetch('https://resource-ghibli-api.onrender.com/films/')
+    fetch(`${BASE_URL}films/`)
     .then(res => res.json())
     .then(res => {
 
@@ -66,7 +69,6 @@ function run() {
     //get the reviews section list
     const reviewsList = document.querySelector("ul") 
 
-
     //what to do when form is submitted
     document.querySelector("form").addEventListener("submit", (event) => {
         //prevent page from refreshing
@@ -95,9 +97,12 @@ function run() {
             //clear the text box
             event.target.review.value = "";
         }
-        
+    })
 
-
+    //what the reset button does when clicked
+    document.getElementById("reset-reviews").addEventListener("click", () => {
+        //empty the reviews list html
+        reviewsList.innerHTML = "";
     })
 
 
