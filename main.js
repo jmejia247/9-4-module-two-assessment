@@ -65,11 +65,12 @@ const addReview = function fAddReview (event) {
     const currentMovie = movieSelector.options[movieSelector.selectedIndex].text;
     if (!currentMovie) {
         alert("Please select a movie first");
+    } else {
+        document.getElementById("review").value = "";
+        strongTitle.innerText = `${currentMovie}: `;
+        listItemReview.append (strongTitle, reviewText);
+        unorderedList.appendChild(listItemReview);
     }
-    document.getElementById("review").value = "";
-    strongTitle.innerText = `${currentMovie}: `;
-    listItemReview.append (strongTitle, reviewText);
-    unorderedList.appendChild(listItemReview);
 }
 
 const removeReviews = function fRemoveReviews (event) {
