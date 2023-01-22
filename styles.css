@@ -3,8 +3,8 @@ body {
     font-family: monospace;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    text-align: center;
+    justify-content: flex-start;
+    align-items: center;
 }
 
 header {
@@ -22,4 +22,15 @@ header h1 {
 
 header img {
     grid-area: img;
+}
+
+#reviews {
+    display: block;
+    
+}
+
+@media (max-width:500px) {
+    #reviews {
+        display: none;
+    }
 }
