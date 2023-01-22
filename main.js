@@ -114,28 +114,66 @@ function run() {
 
     //get the ordered list
     const peopleList = document.querySelector("ol");
+    
+    
+
     //what the show people button does when clicked
     document.getElementById("show-people").addEventListener("click", () => {
         //clear the list 
         peopleList.innerHTML = "";
 
+        //create an object to store the people
+        let peopleObj = {};
+        let count = 0;
+
         //loop through the people array
         currentMovie.people.forEach(person => {
-            //create an empty list item
-            let personLi = document.createElement("li");
             
-            //fetch the persons data
-            fetch(`${BASE_URL}${person}`)
-                .then(response => response.json())
-                .then(response => {
-                    //set the person list items text to the name
-                    personLi.textContent = response.name;
-                }) 
+            //check if person has a value
+            if (!person.slice(-36).includes("/people/")) {
+                //create a variable for the persons id
+                let personId = person.slice(-36);
+                //assign the id to the object
+                peopleObj[personId]= personId;
+                
+            }
 
-            //append the list item to the list
-            peopleList.append(personLi);
+                //fetch the persons data
+                fetch(`${BASE_URL}/people/`)
+                    .then(response => response.json())
+                    .then(response => {
+                        //loop through the response array
+                        for (let i = 0; i < response.length; i++) {
+                            //check if the id exists
+                            if (peopleObj[response[i].id] !== undefined){
+                                //change the objects values to the names
+                                peopleObj[response[i].id] = response[i].name;
+                            }
+
+                        }
+                        
+                    })
+                    .catch((error) => {
+                        console.log(error);
+                    })
 
         })
+        //run this after a second
+        setTimeout(()=>{
+            //loop through the people object
+            for (const key in peopleObj) {
+                //create an empty list item
+                let personLi =  document.createElement("li");
+
+                //set the text constent of the list item
+                personLi.textContent = peopleObj[key];
+
+                //append the list item to the list
+                peopleList.append(personLi);
+            }
+        }, 1000)
+        
+
     })
 
     })
