@@ -5,6 +5,7 @@ const showPeople = document.getElementById('show-people')
 const people = document.querySelector('ol')
 const form = document.querySelector('form')
 const reviews = document.querySelector('ul')
+const resetButton = document.getElementById('reset-reviews')
 
 function noSelection(){
     window.alert(`Please select a movie first`)
@@ -74,9 +75,9 @@ dropdown.addEventListener('change', (e)=>{
                     <strong>${movieTitle}:</strong> ${input}
                     `
                     reviews.append(li)
+                    e.target.reset()
                 }
             }
-            e.target.reset()
         })
 
         showPeople.addEventListener('click', (e)=>{
@@ -98,4 +99,7 @@ dropdown.addEventListener('change', (e)=>{
     })
 })
 
-
+resetButton.addEventListener('click', (e)=>{
+    e.preventDefault()
+    reviews.innerHTML = ``
+})
