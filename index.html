@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="style.css" />
+    <script defer src="main.js"></script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Studio Ghibli Movies</title>
+</head>
+<body>
+    <header>
+        <h1 class="app label">Ghibli Review App</h1>
+        <!--This line is places the image, alt tag means the alternative to label it-->
+   <img src=" https://resource-ghibli-api.onrender.com/images/logo.svg" alt = "Ghibli logo" srcset="" >
+    </header>
+   <!--main tagline deals with suggesting this will be the MAIN content-->
+</body>
+   <main>
+    <!--section tags are used when the content relates to a single theme (Im usually confused whent to use section vs div)-->
+    <section id="input"> 
+        <h2>
+            Select a movie
+        </h2>
+        <!--The select tag will create a drop down menu, I assigned an Id titles to it bc the user should be able to "select a list of movie titles"-->
+        <select id="title">
+            <!--the option tag is waiting for the "values (movie titles)" to go inside of the "select menu" it-->
+<option></option> 
+        </select>
+    </section id = feedback> <!--this is the closing tag for this piece of content that goes together-->
+
+    <section> <!--THis begins a new section of content that is NOT related to the drop down select menu, this one is about reviews and will have an input form that allow the users to "write a review"-->
+        <h2>
+            Add a review
+        </h2>
+        <form>
+            <label for="review">Your review</label>
+            <input id="review" type="text"> 
+            <input type="submit">
+        </form>
+    </section> <!--this is the closing tag for that review input form or elements.  -->
+    <!--This section tag starts a new section of content that will display the movie details when its selected from the options menu. I used a div tag bc I want to give the "card" styling attributes-->
+    
+    <section> 
+        <h2>Movie details</h2>
+        <div id="display-info">
+            <h3 id="movie-title"></h3>
+            <p id="release-date"></p>
+            <p id="description"></p>
+        </div>
+    </section>
+    <!--When the `Show People` button is clicked, it should generate an `ordered` list of people names associated with the movie.-->
+    <section>
+        <h2>People</h2>
+        <ol id="people-show"></ol>
+   
+        <button id="show-people">Show People</button>
+
+        <!--A button with an `id` of `reset-reviews`, when clicked should empty the `ul` where the reviews were being populated.-->
+        <section id="reviews">
+            <h2>Reviews</h2>
+            <ul id="ownReview"></ul>
+            <button id="reset-reviews">
+                Reset Reviews
+            </button>
+        </section>
+
+</html>
