@@ -5,7 +5,7 @@ const movieTitle = document.querySelector('#movie-title');
 const releaseDate = document.querySelector('#release-date');
 const description = document.querySelector('#description');
 const contact = document.querySelector('#contact');
-const form = document.querySelector('#form');
+const form = document.querySelector('form');
 const reviews = document.querySelector('#reviews');
 const addReview = document.querySelector('#review');
 const ownReview = document.querySelector('#ownReview');
@@ -17,7 +17,6 @@ function getAPI() {
     fetch('https://resource-ghibli-api.onrender.com/films')
     .then((response) => response.json())
     .then((response) => {
-        console.log(response)
         response.forEach((movie)=> {
             let option = document.createElement('option');
             option.setAttribute('value', movie.id);
@@ -27,7 +26,7 @@ function getAPI() {
     });
 }
 
-titles.addEventListener('change', (event) => {
+titles.addEventListener('change', () => {
     fetch(`https://resource-ghibli-api.onrender.com/films/${titles.value}`)
     .then((response) => response.json())
     .then((response) => {
@@ -47,7 +46,7 @@ contact.addEventListener('submit', (e) => {
         inputReview.classList.add('inputReview')
         inputReview.innerHTML = `<b>${movieTitle.innerText}.</b>: ${addReview.value}`;
         ownReview.append(inputReview);
-        //form.reset();
+        form.reset()
      }
 })
 
@@ -55,7 +54,7 @@ reviews.addEventListener('click', (e) => {
     e.preventDefault();
     const allReviews = document.querySelectorAll('.inputReview');
     allReviews.forEach((li) => {
-        li.remove();
+        li.remove()
     })
 })
 
