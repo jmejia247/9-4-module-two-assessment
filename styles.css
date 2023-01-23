@@ -2,6 +2,7 @@ body{
     background-color: lavender;
     font-family: monospace;
     display: grid;
+    position: relative;
     grid-template-rows: 16.5% auto auto auto atuo auto;
 }
 .header{
@@ -15,12 +16,12 @@ img{
 position: absolute;
 height: 100%;
 }
-/* h1{
-    position: absolute;
-    top:0px;
-    right: 0px;
+.header h1{
+   text-align: end ;
+   margin-right: 10px;
+   
 
-} */
+}
 
 @media only screen and (max-width: 500px){
     #reviews {
