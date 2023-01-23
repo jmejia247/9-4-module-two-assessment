@@ -82,8 +82,9 @@ function run() {
             ol.append(liPeople)
         })
         
-        console.log(people)
+        
     }
+    
     populatePeople()
  })
 
