@@ -20,7 +20,7 @@ body {
 
 header {
     background-color: skyblue;
-    width: 75%;
+
     position: relative;
 }
 
@@ -32,4 +32,8 @@ h1 {
     top: 0;
     right: 0;
     position: absolute;
+}
+
+p {
+    padding-right: 40%;
 }
