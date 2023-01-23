@@ -1,0 +1,39 @@
+html {
+    padding: 15%
+}
+
+body {
+    background-color: rgb(230, 230, 250);
+    font-family: monospace;
+}
+
+#reviews {
+    display: block;
+}
+
+@media screen and (max-width: 500px) {
+
+    #reviews {
+        display: none;
+    }
+}
+
+header {
+    background-color: skyblue;
+
+    position: relative;
+}
+
+img {
+   max-width: 75%;
+}
+
+h1 {
+    top: 0;
+    right: 0;
+    position: absolute;
+}
+
+p {
+    padding-right: 40%;
+}
