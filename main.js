@@ -1,9 +1,11 @@
 // To ensure Cypress tests work as expeded, add any code/functions that you would like to run on page load inside this function
-
+let titles = document.querySelector("#titles");
+let movieName = "";
+let people = [];
 function run() {
   // Add code you want to run on page load here
+  
 
-  let dropdown = document.querySelector(".dropdown");
   fetch(`https://resource-ghibli-api.onrender.com/films
  `)
     .then((response) => response.json())
@@ -15,51 +17,81 @@ function run() {
         let tag = document.createElement("option");
         tag.innerText = movie.title;
         tag.value = movie.id;
-        dropdown.append(tag);
+        titles.append(tag);
       });
     });
-  dropdown.addEventListener("change", (e) => {
-    //   console.log(dropdown.value);
-    fetch(`https://resource-ghibli-api.onrender.com/films/${dropdown.value}`)
-      .then((response) => response.json())
-      .then((movie) => {
-        let details = document.querySelector(".details");
-        details.innerHTML = "";
-
-        let name = document.createElement("h3");
-        name.textContent = movie.title;
-        details.append(name);
-        let year = document.createElement("p");
-        year.textContent = movie.release_date;
-        details.append(year);
-        let description = document.createElement("p");
-        description.textContent = movie.description;
-        details.append(description);
-      });
-  });
-
-  const ul = document.querySelector("ul");
-  const li = document.createElement("li");
-  document.querySelector("form").addEventListener("submit", (event) => {
-    event.preventDefault();
-
-    li.textContent = event.target.review.value;
-
-    ul.append(li);
-
-    fetch(`https://resource-ghibli-api.onrender.com/films
-                ${event.target.review.value}`)
-      .then((data) => {
-        return data.json();
-      })
-      .then(() => {
-        movieDetails(event.target.review.value);
-
-        document.querySelector("input").value = "";
-      });
-  });
-  run(data);
 }
+
+titles.addEventListener("change", (e) => {
+  fetch(`https://resource-ghibli-api.onrender.com/films/${titles.value}`)
+    .then((response) => response.json())
+    .then((movie) => {
+      console.log(movie);
+      let details = document.querySelector(".details");
+      details.innerHTML = "";
+      movieName = movie.title;
+      people = movie.people;
+      let name = document.createElement("h3");
+      name.textContent = movie.title;
+      details.append(name);
+      let year = document.createElement("p");
+      year.textContent = movie.release_date;
+      details.append(year);
+      let description = document.createElement("p");
+      description.textContent = movie.description;
+      details.append(description);
+    });
+});
+
+//review form
+
+document.querySelector("form").addEventListener("submit", (e) => {
+  e.preventDefault();
+  const ul = document.querySelector("ul");
+  if (titles.value === "") {
+    window.alert("Please select a movie");
+  } else {
+    const review = document.querySelector("#review");
+    const li = document.createElement("li");
+    li.innerHTML = `<strong>${movieName}</strong>: ${e.target.review.value}`;
+    ul.append(li);
+  }
+  console.log(movieName);
+});
+
+const showPeople = document.querySelector("#show-people");
+const ol = document.querySelector("ol");
+
+showPeople.addEventListener("click", (event) => {
+  console.log(people);
+  people.forEach((element) => {
+    fetch(`https://resource-ghibli-api.onrender.com${element}`)
+      .then((response) => response.json())
+      .then((person) => {
+        console.log(person.length);
+        if (person.length > 0) {
+          person.forEach((el) => {
+            let character = document.createElement("li");
+          character.textContent = el.name;
+          ol.append(character);
+          });
+        } else {
+          let character = document.createElement("li");
+          character.textContent = person.name;
+          ol.append(character);
+        }
+      });
+  });
+});
+
+const reset = document.querySelector("#reset-reviews");
+const review = document.querySelector("#reviews h2");
+reset.addEventListener("click", (event) => {
+  const ul = document.querySelector("ul");
+  ul.remove();
+  const newUl = document.createElement("ul");
+  review.after(newUl);
+});
 
 // This function will "pause" the functionality expected on load long enough to allow Cypress to fully load
 // So that testing can work as expected for now
