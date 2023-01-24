@@ -1,0 +1,27 @@
+body {
+
+    background-color: lavender;
+    font-family: monospace;
+    
+    }
+    
+    header {
+    
+    background-color: rgb(65, 100, 239);
+    width: 75%;
+    }
+    
+    .app label{
+        text-align: right;
+
+    }
+    @media only screen and (max-width: 500px){
+    #reviews{
+        display: none;
+    }
+    }
+    
+    img {
+    display: flex;
+        height: 25%;
+    }
