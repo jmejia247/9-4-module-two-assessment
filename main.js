@@ -5,7 +5,11 @@ function run() {
   let filmTitles = document.getElementById("titles");
   let showPeopleClick = document.getElementById("show-people");
   let submitClick = document.getElementById("submit-click");
-  let resetReview = document.getElementById("reset-the-review");
+  let resetReview = document.getElementById("reset-reviews");
+  let listReview = document.getElementById("list-review")
+  // this was missing -- cmon cephus
+  let main = document.getElementById("main")
+  // forgot to add the main & forgot to add the correct class id for reset reviews
   const reviewList = document.querySelector("ul");
   const BASE_URL = `https://resource-ghibli-api.onrender.com`;
   const FILMS_URL = `${BASE_URL}/films`;
@@ -47,7 +51,7 @@ function run() {
       console.log(chosenFilm)
       document.getElementById(
         "display-info"
-      ).innerHTML = `<h3>${chosenFilm[0].title}</h3><p><${chosenFilm[0].original_title}</p><p>${chosenFilm[0].release_date}</p><p>${chosenFilm[0].description}</p>`;
+      ).innerHTML = `<h3>${chosenFilm[0].title}</h3><p>${chosenFilm[0].release_date}</p><p>${chosenFilm[0].description}</p>`;
       let orderedList = document.querySelector("ol");
       orderedList.innerHTML = "";
     }
@@ -79,6 +83,14 @@ function run() {
       }
     }
   });
+
+  //  bringin display info, dropdown, and reviews and the main
+  function displayReview() {
+
+    main
+    display-info 
+    review
+  }
 
   // create an event listener fot the submit button for selecting movie
   submitClick.addEventListener("click", () => {
