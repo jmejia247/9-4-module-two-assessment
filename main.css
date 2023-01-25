@@ -1,0 +1,26 @@
+body {
+    background: lavender;
+    font-family: monospace;
+    
+}
+
+header {
+    width: 70%;
+    height: 150px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    margin-bottom: 30px;
+    background: skyblue;
+    margin: auto;
+}
+
+img {
+    height: 150px;
+}
+
+
+@media only screen and (max-width: "500px"){
+    
+}
