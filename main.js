@@ -72,23 +72,23 @@ function run() {
     const review = input.value;
     strong.textContent = `${movieReviewed}:`;
     li.innerHTML = review;
-    li.append(strong);
+    li.prepend(strong);
     ul.append(li);
 
     input.value = "";
   });
 
   const resetReviews = document.querySelector(".reset-reviews");
-  resetReviews.addEventListener("click", (e) => {
-    e.preventDefault();
-    clearElement(ul);
+      resetReviews.addEventListener("click", (e) => {
+        let ul = document.querySelectorAll('ul li')
+        ul.forEach((li) => {
+            li.remove();
+        })
+   
   });
 
   async function populatePeople() {
     const ol = document.querySelector(".people");
-
-
-
     moviePeople.forEach((people) => {
       let id = people;
       fetch(`https://resource-ghibli-api.onrender.com${id}`)
@@ -107,8 +107,7 @@ function run() {
               ol.append(liperson);
           }
         });
-      //   function clearElement(element) {
-      //     element.innerHTML = "";
+   
     });
   }
 }
