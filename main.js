@@ -78,7 +78,7 @@ function run() {
     input.value = "";
   });
 
-  const resetReviews = document.querySelector(".reset-reviews");
+  const resetReviews = document.querySelector("#reset-reviews");
       resetReviews.addEventListener("click", (e) => {
         let ul = document.querySelectorAll('ul li')
         ul.forEach((li) => {
