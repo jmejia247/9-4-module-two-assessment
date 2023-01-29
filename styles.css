@@ -1,0 +1,30 @@
+body {
+    background-color: rgb(230, 230, 250);
+    color: #333;
+    font-size: 16px;
+    font-family: monospace;
+    line-height: 1.5;
+    margin: 0;
+    padding: 0;
+}
+header {
+    background-color: skyblue;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    height: 150px;
+}
+header img {
+    height: 150px;
+}
+header h1{
+    margin: 0%;
+}
+.hidden {
+    display: none;
+}
+
+@media screen and (max-width: 400px) {
+    #reviews {
+        display: none;
+    }
+}

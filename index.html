@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css" />
+    <script defer src="main.js"></script>
+    <title>Studio Ghibli Assesment Mod 2</title>
+</head>
+<body>
+    <header class="header">
+        <img src="./images/ghibli-logo.png" alt="Ghibli logo" />
+        <h1><strong>Ghibli Review App</strong></h1>
+    </header>
+    <main>
+        <!-- MOVIE SELECTION BELOW -->
+        <section class="movie-dropdown">
+            <h2>Select a movie</h2>
+            <select name="Movie" id="titles"> 
+                <!-- set these inner values below to empty strings -->
+                <option id ="" value=""></option>
+            </select>
+        </section>
+        <!-- MOVIE DESCRIPTION BELOW -->
+        <section class="movie-description">
+            <h2>Movie details</h2>
+            <div id="display-info"></div>
+        </section>
+        <!-- PEOPLE SECTION BELOW -->
+        <section class="people-in-movie">
+            <h2>People</h2>
+            <ol id="characters" class="hidden"></ol>
+            <button id="show-people">Show People</button>
+        </section>
+        <!-- REVIEW SECTION BELOW -->
+        <section class="movie-reviews" id="review">
+            <h2>Add a review</h2>
+            <form action="" for="review" id="form-for-review">
+                <label for="review">Your review: </label>
+                <input type ="text" name="review" id="review" />
+                <input type ="submit" id="submit-click" value="Submit Review">
+                </form> 
+                <!-- didn't close form -->
+        </section>
+        <!-- RESET REVIEWS BELOW -->
+        <section id="reviews">
+            <h2>Reviews</h2>
+            <ul id="list-review"></ul>
+            <button id="reset-reviews">Reset Reviews</button>
+        </section>
+        
+    </main>
+</body>
+</html>
